@@ -60,7 +60,6 @@ function escreverCompra($aProdutos) {
     }
 }
 
-// Programa principal
 $totalCompra = calcularTotal($aProdutos);
 escreverCompra($aProdutos);
 echo "<hr>";
