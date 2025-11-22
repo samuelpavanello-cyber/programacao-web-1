@@ -117,3 +117,30 @@ footer {
     color: #777;
     font-size: 14px;
 }
+
+.tablet-linha {
+    background: #f9f9f9;
+    padding: 14px;
+    margin: 10px 0;
+}
+
+.tablet-link {
+    font-family: monospace;
+    background: #333;
+    color: white;
+    padding: 6px 10px;
+    border-radius: 4px;
+    font-size: 15px;
+    display: inline-block;
+    margin: 8px 0;
+}
+
+.tablet-btn {
+    background: #27ae60;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 10px;
+}

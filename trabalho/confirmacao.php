@@ -33,8 +33,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
     <div class="container center">
         <h1>Obrigado!</h1>
+<<<<<<< HEAD
         <p class = "msg-final">Agradecemos a sua Avaliação, volte sempre!</p>
         <button type="button" class="botao-principal" onclick="window.location.href='index.php'">Nova Avaliação</button>
+=======
+        <p class="msg-final">
+            O Estabelecimento agradece sua resposta e ela é muito importante para nós,<br>
+            pois nos ajuda a melhorar continuamente nossos serviços.
+        </p>
+        <button type="button" class="botao-principal" onclick="window.location.href='index.php?setor=<?= $setor_id ?>'">
+            Nova Avaliação
+        </button>
+>>>>>>> fc51a6f (parte 2 finalizada)
     </div>
 </body>
 </html>

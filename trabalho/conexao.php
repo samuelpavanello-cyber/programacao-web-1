@@ -4,10 +4,8 @@ $db   = 'trabalhosemestral';
 $user = 'postgres';
 $pass = '1711';
 
-$dsn = "pgsql:host=$host;port=5432;dbname=$db;";
-
 try {
-    $pdo = new PDO($dsn, $user, $pass, [
+    $pdo = new PDO("pgsql:host=$host;port=5432;dbname=$db", $user, $pass, [
         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
         PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
     ]);

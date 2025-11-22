@@ -43,6 +43,12 @@ $perguntas = $stmt->fetchAll();
         <footer>
             <p>Sua avaliação é anônima.</p>
         </footer>
+
+        <div style="text-align:center; margin:60px 0;">
+            <a href="admin/" style="color:#2c3e50; font-size:14px; text-decoration:none; border-bottom:1px dashed #2c3e50;">
+                acesso administrativo
+            </a>
+        </div>
     </div>
 
     <script src="assets/js/script.js"></script>
