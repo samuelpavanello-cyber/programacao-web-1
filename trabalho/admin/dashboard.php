@@ -1,10 +1,13 @@
 <?php
 session_start();
-if (!isset($_SESSION['admin_logado'])) { header("Location: index.php"); exit; }
+if (!isset($_SESSION['admin_logado'])) {
+    header("Location: index.php");
+    exit;
+}
 require '../conexao.php';
 
 $totalAvaliacoes = $pdo->query("SELECT COUNT(*) FROM respostas")->fetchColumn();
-$totalSetores    = $pdo->query("SELECT COUNT(*) FROM setores")->fetchColumn();
+$totalSetores = $pdo->query("SELECT COUNT(*) FROM setores")->fetchColumn();
 
 $stmt = $pdo->query("
     SELECT s.id, s.nome, COALESCE(AVG(r.nota), 0) AS media
@@ -18,17 +21,34 @@ $mediasSetores = $stmt->fetchAll();
 
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <title>Dashboard - Avaliações</title>
     <link rel="stylesheet" href="../assets/css/estilo.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
-        .card { background:#f8f9fa; padding:25px; border-radius:12px; text-align:center; }
-        .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); gap:20px; margin:30px 0; }
-        canvas { max-height:400px; margin:30px 0; }
+        .card {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        canvas {
+            max-height: 400px;
+            margin: 30px 0;
+        }
     </style>
 </head>
+
 <body>
     <?php include 'nav.php'; ?>
 
@@ -56,12 +76,12 @@ $mediasSetores = $stmt->fetchAll();
                 <th style="padding:15px;">Média</th>
             </tr>
             <?php foreach ($mediasSetores as $s): ?>
-            <tr style="border-bottom:1px solid #ddd;">
-                <td style="padding:15px; font-weight:bold;"><?= htmlspecialchars($s['nome']) ?></td>
-                <td style="padding:15px; font-size:1.4em; color:#27ae60;">
-                    <?= number_format($s['media'], 1) ?> / 10
-                </td>
-            </tr>
+                <tr style="border-bottom:1px solid #ddd;">
+                    <td style="padding:15px; font-weight:bold;"><?= htmlspecialchars($s['nome']) ?></td>
+                    <td style="padding:15px; font-size:1.4em; color:#27ae60;">
+                        <?= number_format($s['media'], 1) ?> / 10
+                    </td>
+                </tr>
             <?php endforeach; ?>
         </table>
     </div>
@@ -87,4 +107,5 @@ $mediasSetores = $stmt->fetchAll();
         });
     </script>
 </body>
+
 </html>

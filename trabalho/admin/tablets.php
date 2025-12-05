@@ -1,6 +1,9 @@
 <?php
 session_start();
-if (!isset($_SESSION['admin_logado'])) { header("Location: index.php"); exit; }
+if (!isset($_SESSION['admin_logado'])) {
+    header("Location: index.php");
+    exit;
+}
 require '../conexao.php';
 
 $setores = $pdo->query("SELECT * FROM setores ORDER BY nome")->fetchAll();
@@ -9,11 +12,13 @@ $base_url = "http://" . $_SERVER['HTTP_HOST'] . dirname($_SERVER['SCRIPT_NAME'],
 
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <title>Tablets</title>
     <link rel="stylesheet" href="../assets/css/estilo.css">
 </head>
+
 <body>
     <?php include 'nav.php'; ?>
 
@@ -39,4 +44,5 @@ $base_url = "http://" . $_SERVER['HTTP_HOST'] . dirname($_SERVER['SCRIPT_NAME'],
         }
     </script>
 </body>
+
 </html>
