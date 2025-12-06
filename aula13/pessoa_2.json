@@ -1,0 +1,19 @@
+{
+    "nome": "Kaue",
+    "sobrenome": "Bugre",
+    "dataNascimento": "2000-05-15",
+    "cpfcnpj": null,
+    "tipo": null,
+    "telefone": {
+        "tipo": 1,
+        "nome": "Celular",
+        "valor": "49 99999-9999"
+    },
+    "endereco": {
+        "logradouro": "Rua Teste",
+        "bairro": "Centro",
+        "cidade": "Ituporanga",
+        "estado": "SC",
+        "cep": "88400-000"
+    }
+}
